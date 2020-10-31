@@ -1,6 +1,5 @@
 import React from 'react';
 import CompLogo from '../images/GitHub_Logo.svg'
-import Avatar from '../images/Octocat.svg'
 import './styles/Badge.css'
 
 class Badge extends React.Component {
@@ -13,7 +12,7 @@ class Badge extends React.Component {
                     <img src = {CompLogo} width="150" height="100" alt="Logo de la Empresa"/>
                 </div>
                 <div className="badge_section-name">
-                    <img className="badge_avatar" src= {Avatar}  width="150" height="100" alt="Avatar"/>
+                    <img className="badge_avatar" src= {this.props.Avatar}  width="150" height="100" alt="Avatar"/>
                     <h1>{this.props.firstName} <br/> {this.props.lastName} </h1>
                 </div>
                 <div className="badge_section-info">
