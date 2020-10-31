@@ -1,15 +1,21 @@
 import React from 'react';
 import '../components/styles/BadgeNew.css'
 import header from '../images/badge-header.svg'
-import Navbar from '../components/Navbar.jsx'
+//import Navbar from '../components/Navbar.jsx'
 import Badge from '../components/Badge.jsx'
 import BadgeForm from '../components/BadgeForm.jsx'
 
 class BadgeNew extends React.Component {
-    state = { form: {} }
+    state = { form: {
+        firstName: '',
+        lastName: '',
+        Email: '',
+        jobTitle: '',
+        Twitter:''
+    } }
 
     handleChange = e => {
-       // const nextForm = this.state.form
+       // const nextForm  = this.state.form
         //nextForm[e.target.name] = e.target.form
 
         this.setState({
@@ -21,8 +27,7 @@ class BadgeNew extends React.Component {
     }
     render (){
         return (
-            <div>
-                <Navbar/>
+            <React.Fragment>
                 <div className="BadgeNew__hero">
                     <img className="img-fluid" src = {header} alt="Logo"  />
                 </div>
@@ -30,10 +35,10 @@ class BadgeNew extends React.Component {
                     <div className="row">
                         <div className="col-6">
                            <Badge
-                           firstName="Vicente"
-                           lastName="Yah" 
-                           twitter="vimx94"
-                           jobTitle="Senior Frontend Engineer"
+                           firstName={this.state.form.firstName}
+                           lastName={this.state.form.lastName}
+                           twitter={this.state.form.Twitter}
+                           jobTitle={this.state.form.jobTitle}
                            />
                         </div>
                         <div className="col-6">
@@ -41,7 +46,7 @@ class BadgeNew extends React.Component {
                         </div>
                     </div>
                 </div>
-            </div>
+            </React.Fragment>
         )
     }
 }
